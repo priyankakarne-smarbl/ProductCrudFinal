@@ -1,0 +1,62 @@
+
+nav{
+    background-color: burlywood;
+}
+
+.modelclass{
+    margin-left: 200px;
+}
+
+.tblStyle{
+    text-align: center;
+    margin-top:300px;
+    margin-bottom: 300px;
+    margin-right: 300px;
+    margin-left: 400px;
+}
+
+table,th,td{
+    font-size: 25px;
+    text-align: center;
+    border: 1px;
+    border: solid;
+}
+
+.tablecls{
+    border: 2px solid;
+    width: 1000px;
+    height: auto;
+}
+.divclass{
+    display: inline;
+}
+.editbutton{
+    background-color: rgb(102, 123, 163);
+    font-size: 20px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+.deletebutton{
+    background-color: rgb(224, 57, 57);
+    font-size: 20px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+.headercls{
+    background-color: rgb(233, 206, 233);
+}
+.addbutton{
+    margin-left: 95%;
+    // text-align: end;
+}
+.logoutbtn{
+    margin-left: 96%;
+
+}
+
+.form-label-right{
+    text-align: center; 
+}
+

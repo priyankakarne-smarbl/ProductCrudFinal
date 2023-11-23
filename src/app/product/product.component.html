@@ -1,0 +1,113 @@
+<nav class="navbar bg-dark">
+  <span><h1 >Product List</h1></span><span><button class="setComputedVariableTypeName" (click)="onLogout()" >Logout</button> </span>
+ 
+    
+    <br>
+    <br>
+    <button class="addbutton" (click)="create(content)" [disabled]="clicked" >Add Product</button>
+</nav>
+<div class="tblStyle">
+ 
+<table class="tablecls">
+  <thead class="thead-dark">
+      <tr class="headercls">
+        <th>Sr, No</th>
+          <th scope="col">ProductName</th>
+          <th scope="col">Product Price</th>
+          <th scope="col">Product description</th>
+          <th scope="col">product Quantity</th>
+          <th scope="col">Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let f of product ; let i = index">
+        <td>{{i+1}}</td>
+          <td scope="row"> {{f.name}}</td>
+          <td>{{f.price}}</td>
+          <td>{{f.description}}</td>
+          <td>{{f.quantity}}</td>
+          <!-- <td>{{ f.discount }}</td> -->
+          <td><button class="editbutton"(click)="edit(content,f)">Edit</button>&nbsp;
+              <button class="deletebutton" (click)="delete(f.id)" >Delete</button>
+          </td>
+
+      </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+<ng-template class="modelclass" #content let-modal   style="width: 183%;" >
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title h4" id="example-modal-sizes-title-sm">
+        <ng-container> {{modalLabel}} Product</ng-container>
+      </div>
+    </div>
+    <div class="overlay overlay-block cursor-default modal-body">
+
+  <form  action="#" class="form form-label-right" [formGroup]="productForm">
+  <div>
+      <table class="modeltable" >
+          <!-- <caption>
+            Add Product
+          </caption> -->
+          <thead>
+            <tr>
+                  <th >Name</th>
+                  <input formControlName="name" type="text" placeholder="name" > 
+            </tr>
+            
+          </thead>
+          <tbody>
+            <tr>
+              <th> 
+                  Details
+              </th>
+              <input formControlName="description" type="text" placeholder="details" >   
+            </tr>
+            <tr>
+              <th> 
+                  Price
+              </th>
+              <input formControlName="price" type="number" placeholder="price" > 
+            </tr>
+            <tr>
+              <th> 
+                  Quantity
+              </th>
+              <input formControlName="quantity" type="number" placeholder="quantity" > 
+              <!-- <input formControlName="discount" type="number" placeholder="discount" >  -->
+              
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</form>
+    </div>
+    </div>
+
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-light btn-elevate mr-2" (click)="closeModel()">
+    Cancel
+  </button>
+  <ng-container>
+    <button type="submit" *ngIf="this.modalLabel != 'Edit'" class="btn btn-primary btn-elevate"
+      (click)="onSubmit()">
+      Save
+    </button>
+    <button type="submit" *ngIf="this.modalLabel == 'Edit'" class="btn btn-primary btn-elevate"
+      (click)="onUpdate()">
+      Update
+    </button>
+  </ng-container>
+</div>
+  
+</ng-template>
+
+
