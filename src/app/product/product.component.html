@@ -1,14 +1,74 @@
-<nav class="navbar bg-dark">
-  <span><h1 >Product List</h1></span><span><button class="setComputedVariableTypeName" (click)="onLogout()" >Logout</button> </span>
+<div class="lm-Widget p-Widget lm-Panel p-Panel">
+<ul ngbNav #nav="ngbNav"  class="nav-tabs">
+  <li id="menu-products">
+      <div ngbDropdown  class="d-inline-block dropdown" role="presentation"  >
+          <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" id="dropdownBasic1" ngbDropdownToggle>
+           Files
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="dropdown-menu">
+            <button ngbDropdownItem class="dropdown-item ">Open Mobile list </button>
+
+            <!-- sublist -->
+            <!-- <ul class="submenu"> -->
+              <li id="dropend">
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="dropdown-menu">
+                  <!-- <button ngbDropdownItem (click)="android()" [ngModel]="input">Android</button> -->
+                  <button ngbDropdownItem (click)='itemClick($event)' value="Android">Android</button>
+                  <!-- <input ng  placeholder="Enter text" /> -->
+                  <!-- <h2>{{input}}</h2> -->
+                  <button ngbDropdownItem (click)="itemClick($event)" value="Stock Android" >stock android</button>
+                  <!-- <h2>{{input}}</h2> -->
+                </div>
+
+              </li>
+            <!-- </ul> -->
+
+            <button ngbDropdownItem class="dropdown-item">Open Order list</button>
+            <button ngbDropdownItem class="dropdown-item">Favourite item </button>
+          </div>
+        </div>
+  </li>
+  <li id="menu-products">
+    <div ngbDropdown  class="d-inline-block dropdown" role="presentation">
+        <button type="button" class="btn btn-outline-primary"id="dropdownBasic1" ngbDropdownToggle>
+         Payment 
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="dropdown-menu">
+          <button ngbDropdownItem>Coupons</button>
+          <button ngbDropdownItem>Save upi</button>
+          <button ngbDropdownItem>MyCash</button>
+        </div>
+      </div>
+</li>
+<li id="menu-products">
+  <div ngbDropdown class="d-inline-block dropdown" role="presentation">
+      <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+       Manage Account
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="dropdown-menu">
+        <button ngbDropdownItem>Account Details</button>
+        <button ngbDropdownItem>Address</button>
+        <button ngbDropdownItem>Contact Us</button>
+      </div>
+    </div>
+</li>
+<li class="logoutList">
+<button class="logoutbtn btn btn-outline-primary" (click)="onLogout()" >Logout</button> </li>
+</ul>
+
+</div>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+<button (click)="MenuListPage()">Menu-List</button>
+  <h1 style="margin-left: 50%;">{{input}}</h1>
+  <input type="text" [(ngModel)]="input">
  
-    
-    <br>
-    <br>
-    <button class="addbutton" (click)="create(content)" [disabled]="clicked" >Add Product</button>
-</nav>
+    <button class="addbutton " (click)="create(content)"  >Add Product</button>
+
 <div class="tblStyle">
- 
+  <h1 >Product List</h1>
 <table class="tablecls">
+  
   <thead class="thead-dark">
       <tr class="headercls">
         <th>Sr, No</th>

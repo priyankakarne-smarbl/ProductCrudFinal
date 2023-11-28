@@ -1,24 +1,32 @@
-import { Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, NgModule } from '@angular/core';
 import { FormGroup,FormBuilder,Validators, FormControl } from '@angular/forms';
 import { ApiService } from '../service/api.service';
 import { HttpClient } from '@angular/common/http';
-import { NgbModal ,ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal ,ModalDismissReasons, NgbNavModule} from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
+
+
 @Component({
   selector: 'app-products',
   templateUrl: './product.component.html',
+  
   styleUrls: ['./product.component.scss']
 })
-export class ProductsComponent {
+ export class ProductsComponent {
+// onHover($event: MouseEvent) {
+// throw new Error('Method not implemented.');
+// }
   productForm!: FormGroup;
   modalLabel: String="Add";
   data:any;
   product:any=[];
-  clicked=false;
-  closeResult!: string;
+  input: any;
+
+
+
  
 
  
@@ -29,12 +37,7 @@ export class ProductsComponent {
   ngOnInit(): void{
   this.loadForm();
 this.data= this.getAllProduct();
-
- 
-
-
-  
-  }
+}
 
   loadForm(){
     this.productForm= new FormGroup({
@@ -49,37 +52,21 @@ this.data= this.getAllProduct();
     })
 
   }
+  
   create(content: any) {
     this.loadForm()
-     this.clicked=true;
     this.modalLabel = "Add";
     this.modalService
       .open(content, { size: 'lg', backdrop: 'static', ariaLabelledBy: "modal-basic-title" })
       .result.then(
       );
-  //   this.modalService
-  //   .open(content, { size: 'lg', backdrop: 'static', ariaLabelledBy: "modal-basic-title" })
-  //   .result.then(
-  //     (result: any) => {this.closeResult=`closed with: ${result}`;}
-  //     ,(reson: any)=>{
-  //       `this.closeResult=DisMisses ${this.getDismissReason(reson)}`;
-  //     });
+
   }
 
-  // private getDismissReason(reson:any):string{
-  //   if(reson === ModalDismissReasons.ESC){
-  //     return 'by pressing ESC';
-  //   }else if (reson === ModalDismissReasons.BACKDROP_CLICK){
-  //     return 'by clicking on a backdrop';
-  //   }else{
-  //     return `with : ${reson}`
-  //   }
-  // }
   onSubmit(){
     if(this.productForm.valid){
       let requestBody={
-
-        "name":this.productForm.get('name')?.value,
+         "name":this.productForm.get('name')?.value,
         "price":this.productForm.get('price')?.value,
         "description":this.productForm.get('description')?.value,
         "quantity":this.productForm.get('quantity')?.value
@@ -92,13 +79,13 @@ this.data= this.getAllProduct();
          (res) => {
           if(res){
           this.modalService.dismissAll();
-          this.toastr.success("Product added successfully", '');
-          this.clicked = false;
+          this.toastr.success("Product added successfully");
+       
           this.getAllProduct();
          }else{
           error: () => {
-            alert("Error while adding the product");
-            this.clicked = false;
+            this.toastr.error("Error while adding the product");
+         
           }
          }
         },
@@ -133,8 +120,7 @@ this.data= this.getAllProduct();
        this.api.editProduct(requestBody) .subscribe({
         next: (res: any) => {
           this.modalService.dismissAll();
-          this.toastr.success("Product updated successfully", '');
-          this.clicked = false;
+          this.toastr.success("Product updated successfully");
           this.getAllProduct();
         },
         
@@ -166,9 +152,7 @@ this.data= this.getAllProduct();
     tap(response => {
       if (response) {
         if (response.status=="200 OK") {
-        
-          
-          this.toastr.success("Product deleted successfully", '');
+          this.toastr.success("Product deleted successfully");
           this.modalService.dismissAll();
           this.getAllProduct();
           
@@ -184,14 +168,22 @@ this.data= this.getAllProduct();
 
   }
   closeModel(){
-    this.clicked=false;
     this.modalService.dismissAll();
   }
 
   onLogout() {
    
-    this.router.navigate(['/login']);
+this.router.navigate(['/login']);
 
+  }
+  MenuListPage(){
+    this.router.navigate(['/menulist']);
+  }
+
+  itemClick(item:any){
+    //this.input="Android Mobiles";
+    this.input=item.target.value;
+    // window.alert(this.input);
   }
 
 }

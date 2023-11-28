@@ -9,12 +9,19 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from  '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule ,NgbNavModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgToastModule } from 'ng-angular-popup';
+
+import { MenuListComponent } from './menu-list/menu-list.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ProductsComponent
+    ProductsComponent,
+ 
+    MenuListComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +31,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    NgbModule,
+    NgbNavModule,
+    NgToastModule
+  
     
 
   ],
