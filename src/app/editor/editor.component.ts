@@ -25,12 +25,11 @@ export class EditorComponent implements OnInit {
 
     this.saveBtnEvent.emit(this.editor.get("textareas"))
 
-   
-      this.editor.get("textareas")?.setValue("");
-    
   }
 
-  
+  cleartextArea(){
+    this.editor.get("textareas")?.setValue("");
+    }
 
   
  

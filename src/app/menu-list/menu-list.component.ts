@@ -1,12 +1,14 @@
-import { Component  } from '@angular/core';
+import { AfterViewInit, Component, ViewChild  } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { EditorComponent } from '../editor/editor.component';
 
 @Component({
   selector: 'app-menu-list',
   templateUrl: './menu-list.component.html',
   styleUrls: ['./menu-list.component.scss']
 })
-export class MenuListComponent {
+export class MenuListComponent implements AfterViewInit{
+  @ViewChild(EditorComponent) editor!: EditorComponent;
 
   input:any;
   values:any;
@@ -15,12 +17,15 @@ export class MenuListComponent {
   constructor(private toaster:ToastrService){
 
   }
+  ngAfterViewInit(): void {
+    
+  }
     
   saveBtn(data:any){
     this.input=data;
    // console.log(this.input)
    
-    
+   
 }
 
 showData(){
@@ -37,7 +42,7 @@ showData(){
 
   // }
   clrBtn(){
-     this.values.setValue('');
+    this.editor.cleartextArea();
   }
 
 
