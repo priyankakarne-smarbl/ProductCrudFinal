@@ -1,0 +1,47 @@
+<div class="lm-Widget p-Widget lm-Panel p-Panel">
+    <ul ngbNav #nav="ngbNav"  class="nav-tabs">
+     
+        <li id="menu-products">
+            <div ngbDropdown  class="d-inline-block dropdown" role="presentation">
+                <button type="button" class="btn btn-outline-primary"id="dropdownBasic1" ngbDropdownToggle>
+                 Mobiles 
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="dropdown-menu">
+                  <button ngbDropdownItem (click)='itemClick($event)' value="Motorola">Motorola</button>
+                  <button ngbDropdownItem (click)='itemClick($event)' value="Samsung">Samsung</button>
+                  <button ngbDropdownItem (click)='itemClick($event)' value="Android">Android</button>
+                </div>
+              </div>
+        </li>
+        <li id="menu-products">
+            <div ngbDropdown  class="d-inline-block dropdown" role="presentation">
+                <button type="button" class="btn btn-outline-primary"id="dropdownBasic1" ngbDropdownToggle>
+                 Fashin brands
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="dropdown-menu">
+                  <button ngbDropdownItem (click)='itemClick($event)' value="Mango">Mango</button>
+                  <button ngbDropdownItem (click)='itemClick($event)' value="H&M">H&M</button>
+                  <button ngbDropdownItem (click)='itemClick($event)' value="BewKoof">BewKoof</button>
+                </div>
+              </div>
+        </li>
+        <li id="menu-products">
+            <div ngbDropdown  class="d-inline-block dropdown" role="presentation">
+                <button type="button" class="btn btn-outline-primary"id="dropdownBasic1" ngbDropdownToggle>
+                 Homes & Furniture 
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="dropdown-menu">
+                  <button ngbDropdownItem (click)='itemClick($event)' value="Pepperfry">Pepperfry</button>
+                  <button ngbDropdownItem (click)='itemClick($event)' value="Urban Ladder">Urban Ladder</button>
+                  <button ngbDropdownItem (click)='itemClick($event)' value="IKEA">IKEA</button>
+                </div>
+              </div>
+        </li>
+        <li class="logoutList">
+            <button class="logoutbtn btn btn-outline-primary" (click)="onLogout()" >Logout</button>
+         </li>
+            
+   </ul>
+ </div>
+
+ <div style="margin-left: 500px;"><h1>{{input1}}</h1></div>

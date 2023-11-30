@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import {NgbConfig} from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -9,9 +10,22 @@ import {NgbConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent {
   title = 'ProductCrud';
-  constructor(ngbConfig: NgbConfig) {
+  isLoginPage: boolean=false;
+  constructor(ngbConfig: NgbConfig, private router : Router) {
     ngbConfig.animation = false;
+    this.router.events.forEach((event) => {
+      if (event instanceof NavigationEnd) {
+        if(event['url'] =='/login'){
+          this.isLoginPage=false;
+        }else{
+          this.isLoginPage=true;
+        }
+       
+      }
+    });
   }
+
+
 
   
 }

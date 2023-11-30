@@ -13,6 +13,9 @@ import { NgbModule ,NgbNavModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgToastModule } from 'ng-angular-popup';
 
 import { MenuListComponent } from './menu-list/menu-list.component';
+import { HeaderComponent } from './header/header.component';
+import { EditorComponent } from './editor/editor.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { MenuListComponent } from './menu-list/menu-list.component';
     LoginComponent,
     ProductsComponent,
  
-    MenuListComponent
+    MenuListComponent,
+      HeaderComponent,
+      EditorComponent,
+      SidebarComponent
   ],
   imports: [
     BrowserModule,

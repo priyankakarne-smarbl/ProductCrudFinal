@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -7,37 +7,39 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./menu-list.component.scss']
 })
 export class MenuListComponent {
-  input: string="";
-  input1:string="";
-  products:String[]=['Mobile','Cars','Electronics']
+
+  input:any;
+  values:any;
+
 
   constructor(private toaster:ToastrService){
 
   }
-
-  addToList(){
-    this.products.push(this.input)
-    this.toaster.success(this.input+"  is added");
-    this.input=""
-  }
-  
-   itemClick(events:any){
-    this.input1=events.target.value;
-
-    setTimeout(()=>{
-      this.input1="";
-    },3000)
-
-  }
-
-  
-
-
-
-  //  const request=setTimeout(() => {
-  //   this.input1="";
     
-  // }, 5000);
+  saveBtn(data:any){
+    this.input=data;
+   // console.log(this.input)
+   
+    
+}
+
+showData(){
+  // console.log(this.input.value);
+  this.values=this.input.value;
+  window.alert(this.values);
+
+}
+
+  // saveBtn(data:any){
+  //   this.input=data.target.value;
+  //   // this.toaster.success(this.input);
+  //   console.log(this.input);
+
+  // }
+  clrBtn(){
+     this.values.setValue('');
+  }
+
 
 
 
@@ -45,3 +47,4 @@ export class MenuListComponent {
  
 
 }
+

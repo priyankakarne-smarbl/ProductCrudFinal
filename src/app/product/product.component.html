@@ -1,4 +1,4 @@
-<div class="lm-Widget p-Widget lm-Panel p-Panel">
+<!-- <div class="lm-Widget p-Widget lm-Panel p-Panel">
 <ul ngbNav #nav="ngbNav"  class="nav-tabs">
   <li id="menu-products">
       <div ngbDropdown  class="d-inline-block dropdown" role="presentation"  >
@@ -8,20 +8,17 @@
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="dropdown-menu">
             <button ngbDropdownItem class="dropdown-item ">Open Mobile list </button>
 
-            <!-- sublist -->
-            <!-- <ul class="submenu"> -->
               <li id="dropend">
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="dropdown-menu">
-                  <!-- <button ngbDropdownItem (click)="android()" [ngModel]="input">Android</button> -->
+                 
                   <button ngbDropdownItem (click)='itemClick($event)' value="Android">Android</button>
-                  <!-- <input ng  placeholder="Enter text" /> -->
-                  <!-- <h2>{{input}}</h2> -->
+                
                   <button ngbDropdownItem (click)="itemClick($event)" value="Stock Android" >stock android</button>
-                  <!-- <h2>{{input}}</h2> -->
+                
                 </div>
 
               </li>
-            <!-- </ul> -->
+
 
             <button ngbDropdownItem class="dropdown-item">Open Order list</button>
             <button ngbDropdownItem class="dropdown-item">Favourite item </button>
@@ -56,13 +53,13 @@
 <button class="logoutbtn btn btn-outline-primary" (click)="onLogout()" >Logout</button> </li>
 </ul>
 
-</div>
+</div> -->
 
-<div [ngbNavOutlet]="nav" class="mt-2"></div>
-<button (click)="MenuListPage()">Menu-List</button>
-  <h1 style="margin-left: 50%;">{{input}}</h1>
-  <input type="text" [(ngModel)]="input">
- 
+<!-- <div [ngbNavOutlet]="nav" class="mt-2"></div> -->
+<button class="menuButton" (click)="MenuListPage()">Menu-List</button>
+  <!-- <h1 style="margin-left: 50%;">{{input}}</h1> -->
+  <!-- <input type="text" [(ngModel)]="input">
+  -->
     <button class="addbutton " (click)="create(content)"  >Add Product</button>
 
 <div class="tblStyle">

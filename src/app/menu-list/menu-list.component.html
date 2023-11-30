@@ -1,4 +1,4 @@
-<div class="lm-Widget p-Widget lm-Panel p-Panel">
+<!-- <div class="lm-Widget p-Widget lm-Panel p-Panel">
     <ul ngbNav #nav="ngbNav"  class="nav-tabs">
      
       <li id="menu-products">
@@ -18,4 +18,17 @@
  <input type="text" [(ngModel)]="input" placeholder="Enter value"> 
  <button (click)="addToList()"> Add products</button>
 </div>
-<div style="margin-left: 500px;"><h1>{{input1}}</h1></div>
+<div style="margin-left: 500px;"><h1>{{input1}}</h1></div> -->
+
+<div class="childcomponents">
+  <app-sidebar></app-sidebar>
+  <app-editor (saveBtnEvent)="saveBtn($event)" (clearevent)="clrBtn()"  ></app-editor>
+   
+
+</div>
+
+<div>
+  <button class="savebtn" (click)="showData()">Save</button>
+  <button class="clrbtn" (click)="clrBtn()">Clear</button>
+</div>
+
