@@ -1,5 +1,18 @@
 textarea{
-    background-color: rgb(243, 243, 173);
+    background-color: white;
     margin-left: 5px;
-    border: 2px solid black;
+    height: 800px;
+    width: 1420px;
+    font-size: 18pt;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+   }   
+   
+
+#editorid{
+    overflow-x: scroll;
+    overflow-y: scroll;
+    white-space: nowrap;
 }
+

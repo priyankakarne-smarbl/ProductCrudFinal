@@ -8,7 +8,7 @@ import { EditorComponent } from '../editor/editor.component';
   styleUrls: ['./menu-list.component.scss']
 })
 export class MenuListComponent implements AfterViewInit{
-  @ViewChild(EditorComponent) editor!: EditorComponent;
+  @ViewChild(EditorComponent) editorS!: EditorComponent;
 
   input:any;
   values:any;
@@ -35,21 +35,8 @@ showData(){
 
 }
 
-  // saveBtn(data:any){
-  //   this.input=data.target.value;
-  //   // this.toaster.success(this.input);
-  //   console.log(this.input);
-
-  // }
   clrBtn(){
-    this.editor.cleartextArea();
+    this.editorS.cleartextArea();
   }
-
-
-
-
-
- 
-
 }
 

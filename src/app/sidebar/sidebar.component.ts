@@ -8,13 +8,22 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
 
   inputbtn = '';
+  buttonlist:String[]=["btn1","btn2","btn3","btn4","btn5","btn6"]
 
-  onClick(button: string) {
-    this.inputbtn = button;
 
-    setTimeout(() => {
-      this.inputbtn = '';
-    }, 3000);
-  }
+  // onClick(button: string) {
+  //   this.inputbtn = button;
 
+  //   setTimeout(() => {
+  //     this.inputbtn = '';
+  //   }, 3000);
+  // }
+
+  itemClick(events:any){
+      this.inputbtn=events.target.value;
+      setTimeout(() => {
+        this.inputbtn = '';
+      }, 3000);
+
+}
 }

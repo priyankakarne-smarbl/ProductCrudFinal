@@ -7,22 +7,15 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./editor.component.scss']
 })
 export class EditorComponent implements OnInit {
-   @Output() saveBtnEvent=new EventEmitter<any>();
-
-  //  @Output() clearevent: any;
-
-
-   
-   editor!: FormGroup;
-
+   @Output() saveBtnEvent=new EventEmitter<any>();   
   
-   textdata:string="";
-   constructor(){}
+  editor!: FormGroup;
+  textdata:string="";
+  constructor(){}
   ngOnInit(): void {
     this.editor=new FormGroup({
       textareas:new FormControl()
     })
-
     this.saveBtnEvent.emit(this.editor.get("textareas"))
 
   }
@@ -30,10 +23,6 @@ export class EditorComponent implements OnInit {
   cleartextArea(){
     this.editor.get("textareas")?.setValue("");
     }
-
-  
- 
-
 
 
 }
