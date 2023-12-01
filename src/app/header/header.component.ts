@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   input1: any;
   constructor(private router:Router){}
+  liList:Number[]=[1,2,3,4]
+
+  subdata:string[]=["subdata1","subdata2","subdata3","subdata4"]
+  
 
 
   itemClick(events:any){
