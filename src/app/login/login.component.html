@@ -12,14 +12,14 @@
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Email</label>
                         <input formControlName="emailadd" type="email" class="form-control" id="formGroupExampleInput" >
-						<!-- <small *ngIf="loginForm.controls['emailadd'].invalid">*Email is Required !</small> -->
+						<small *ngIf="loginForm.controls['emailadd'].invalid && loginForm.controls['emailadd'].touched">*Email is Required !</small>
 						
                       </div>
                       <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Password</label>
                         <input formControlName="loginpassword" type="password" class="form-control" id="formGroupExampleInput2" >
-						<!-- <small >*Password is Required !</small> -->
-						<!-- *ngIf="loginForm.get('loginpassword').invalid" -->
+						<small *ngIf="loginForm.controls['loginpassword'].invalid && loginForm.controls['loginpassword'].touched">*Password is Required !</small>
+						
                       </div>
 					  <div>
 						<div class="error">{{errorMsg}}</div>

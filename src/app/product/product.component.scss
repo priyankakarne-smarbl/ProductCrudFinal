@@ -9,12 +9,15 @@
 }
 
 .menuButton{
-    margin-left: 96%;
+    margin-left: 94%;
+    width: 100px;
+    border: 1 px solid black;
+    border-radius: 5px;
+    
 }
 .tblStyle{
     text-align: center;
     margin-top:300px;
-
     margin-right: 300px;
     margin-left: 400px;
 }
@@ -52,16 +55,15 @@ table,th,td{
     background-color: rgb(233, 206, 233);
 }
 .addbutton{
-    margin-left: 95%;
-    // text-align: end;
+    margin-left: 94%;
+    width: 100px;
+    border: 1 px solid black;
+    border-radius: 5px;
+ 
 }
 .logoutbtn{
     margin-left: 96%;
     display: inline;
-    // .logoutList{
-    //     margin-left: 1450px;
-    // }
- 
 
 }
 .logoutList{
@@ -130,13 +132,7 @@ table,th,td{
     --bs-gradient: none;
 }
 
-// .dropdown:hover.dropdown-item{
-//     display: block;
-// }
 
-// #menu-products:hover .dropdown-menu{
-//     display: block;
-// }
 
 #menu-products:hover  .dropdown-menu, #dropend  .dropdown-menu{
     display: block;
@@ -163,6 +159,3 @@ table,th,td{
     }
 }
 
-// #submenuid li:hover .subdropdown-menu{
-//     display: inline;
-// }

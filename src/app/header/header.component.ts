@@ -12,21 +12,15 @@ export class HeaderComponent {
   liList:Number[]=[1,2,3,4]
 
   subdata:string[]=["subdata1","subdata2","subdata3","subdata4"]
-  
-
-
   itemClick(events:any){
     this.input1=events.target.value;
 
     setTimeout(()=>{
       this.input1="";
-    },3000)
-
-  }
+    },3000)}
 
   onLogout() {
    
     this.router.navigate(['/login']);
-    
-      }
+    }
 }

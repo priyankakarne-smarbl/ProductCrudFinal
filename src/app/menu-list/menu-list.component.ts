@@ -14,25 +14,15 @@ export class MenuListComponent implements AfterViewInit{
   values:any;
 
 
-  constructor(private toaster:ToastrService){
-
-  }
-  ngAfterViewInit(): void {
-    
-  }
+  constructor(private toaster:ToastrService){}
+  ngAfterViewInit(): void {}
     
   saveBtn(data:any){
-    this.input=data;
-   // console.log(this.input)
-   
-   
-}
+    this.input=data;}
 
 showData(){
-  // console.log(this.input.value);
   this.values=this.input.value;
   window.alert(this.values);
-
 }
 
   clrBtn(){

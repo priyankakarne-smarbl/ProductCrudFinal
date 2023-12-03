@@ -16,21 +16,14 @@ import { tap } from 'rxjs';
   styleUrls: ['./product.component.scss']
 })
  export class ProductsComponent {
-// onHover($event: MouseEvent) {
-// throw new Error('Method not implemented.');
-// }
+
   productForm!: FormGroup;
   modalLabel: String="Add";
   data:any;
   product:any=[];
   input: any;
 
-
-
- 
-
- 
-  constructor(private formBuilder:FormBuilder,private router: Router, private api:ApiService
+constructor(private formBuilder:FormBuilder,private router: Router, private api:ApiService
     ,private modalService: NgbModal,private toastr: ToastrService
     ){}
 
@@ -46,12 +39,7 @@ this.data= this.getAllProduct();
       price : new FormControl("",Validators.required),
       description : new FormControl("",Validators.required),
       quantity : new FormControl("",Validators.required)
-      // discount:new FormControl("",Validators.required)
-
-
-    })
-
-  }
+    })}
   
   create(content: any) {
     this.loadForm()
@@ -70,7 +58,7 @@ this.data= this.getAllProduct();
         "price":this.productForm.get('price')?.value,
         "description":this.productForm.get('description')?.value,
         "quantity":this.productForm.get('quantity')?.value
-        // "discount": this.productForm.get('discount')?.value
+     
       }
   
      
@@ -114,7 +102,7 @@ this.data= this.getAllProduct();
       "description":this.productForm.get('description')?.value,
       "quantity":this.productForm.get('quantity')?.value,
       "id":this.productForm.get('id')?.value
-      // "discount": this.productForm.get('discount')?.value
+   
     }
     if(this.productForm.valid){
        this.api.editProduct(requestBody) .subscribe({
@@ -136,13 +124,11 @@ this.data= this.getAllProduct();
       .open(content, { size: 'lg', backdrop: 'static', ariaLabelledBy: "modal-basic-title" })
       .result.then(
       );
-   
-  
-      this.productForm.get("id")?.setValue(data?.id);
+   this.productForm.get("id")?.setValue(data?.id);
    this.productForm.get("name")?.setValue(data?.name);
    this.productForm.get("price")?.setValue(data?.price);
    this.productForm.get("description")?.setValue(data?.description);
-  //  this.productForm.get("quantity")?.setValue(productdata?.discount);
+
   this.productForm.get("quantity")?.setValue(data?.quantity);
 
 
@@ -155,18 +141,10 @@ this.data= this.getAllProduct();
           this.toastr.success("Product deleted successfully");
           this.modalService.dismissAll();
           this.getAllProduct();
-          
-       
-        }
-        
-      }
-         }),
-   
-  )
-  .subscribe();
+          }}}),).subscribe();}
 
 
-  }
+
   closeModel(){
     this.modalService.dismissAll();
   }
@@ -181,9 +159,9 @@ this.router.navigate(['/login']);
   }
 
   itemClick(item:any){
-    //this.input="Android Mobiles";
+ 
     this.input=item.target.value;
-    // window.alert(this.input);
+  
   }
 
 }

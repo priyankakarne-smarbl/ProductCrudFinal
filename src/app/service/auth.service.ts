@@ -8,14 +8,7 @@ import { Observable, catchError, map, of, throwError } from 'rxjs';
 export class AuthService {
 
   constructor(private http:HttpClient) { }
-  // login(uname:string,pword:string){
-  //   if(uname==='admin@gmail.com' && pword==='admin'){
-  //     return 200;
-  //   }else{
-  //   return 403;
-  //   }
-  // }
- 
+
 
   httpOptions = {
     headers: new HttpHeaders({
